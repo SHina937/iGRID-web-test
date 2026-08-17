@@ -48,7 +48,7 @@ body {
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
   padding-bottom: 100px; /* space for the fixed CTA bar (.fv__cta) */
-  overflow-x: hidden; /* clip decorative elements (e.g. card__deco-char) that bleed past the card edge on mid-width viewports */
+  overflow-x: hidden; /* clip decorative elements that bleed past the card edge on mid-width viewports */
 }
 img { max-width: 100%; display: block; }
 a { text-decoration: none; color: inherit; }
@@ -68,13 +68,17 @@ p { margin: 0; }
   padding: 60px 10px;
   position: relative;
 }
+.section-2 {
+   padding: 0px 10px 60px;
+}
+.section-4 {padding-top: 30px;}
 .card {
   width: 100%;
   max-width: var(--content-width);
   margin: 0 auto;
   background: var(--color-white);
   border-radius: var(--radius-content);
-  padding: 70px 40px 60px;
+  padding: 70px 40px 50px;
   position: relative;
 }
 .card--green { background: var(--color-green); }
@@ -226,7 +230,7 @@ p { margin: 0; }
 /* ---------- Badge title (floating orange tag) ---------- */
 .badge-title {
   position: absolute;
-  top: -30px;
+  top: -20px;
   left: 50%;
   transform: translateX(-50%);
   background: var(--color-orange);
@@ -244,6 +248,7 @@ p { margin: 0; }
   position: relative;
   display: inline-block;
   margin: 0 auto;
+  top: -50px;
 }
 
 /* ---------- Comment pill (グリ太 / GX先生 発言) ---------- */
@@ -280,6 +285,14 @@ p { margin: 0; }
   border: none;
   border-radius: 0;
 }
+.pill--banner02{
+  margin-top: 80px;
+  margin-bottom: 0px;
+}
+.pill--banner03{
+  margin-top: -30px;
+  margin-bottom: 50px;
+}
 .pill__avatar {
   width: 100px;
   height: 100px;
@@ -306,7 +319,10 @@ p { margin: 0; }
 }
 
 /* ---------- 比較（チャット）セクション ---------- */
-.hikaku { padding-top: 60px; }
+.hikaku { 
+  padding-bottom: 0px; 
+  
+}
 .teach-badge {
   display: block;
   width: 100%;
@@ -321,16 +337,17 @@ p { margin: 0; }
 
 .chat-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
   gap: 40px;
   margin-bottom: 40px;
 }
 .chat-card {
   background: var(--color-white);
   border-radius: var(--radius-content);
-  padding: 30px 24px;
+  padding: 0 0 44px;
   display: flex;
   flex-direction: column;
+  overflow: hidden;
 }
 .chat-card__title {
   background: var(--color-blue);
@@ -339,29 +356,29 @@ p { margin: 0; }
   font-weight: 700;
   text-align: center;
   padding: 12px;
-  border-radius: var(--radius-sm);
+  border-radius: 0;
   margin: 0 0 28px;
 }
-.chat-list { display: flex; flex-direction: column; gap: 26px; }
-.chat-group { display: flex; flex-direction: column; align-items: flex-end; gap: 6px; }
-.chat { display: flex; align-items: flex-start; gap: 10px; }
+.chat-list { display: flex; flex-direction: column; gap: 26px; padding: 0 40px; }
+.chat-group { display: flex; flex-direction: column; align-items: flex-end; gap: 8px; }
+.chat { display: flex; align-items: flex-start; gap: 14px; }
 .chat--q { justify-content: flex-end; }
 .chat__avatar {
-  width: 56px;
-  height: 56px;
+  width: 72px;
+  height: 72px;
   border-radius: 50%;
   object-fit: cover;
   flex-shrink: 0;
 }
-.chat__bubbles { display: flex; flex-direction: column; gap: 10px; }
+.chat__bubbles { display: flex; flex-direction: column; gap: 12px; }
 .chat__bubble {
   position: relative;
   background: var(--color-green);
   border-radius: 10px;
-  padding: 14px 18px;
-  font-size: var(--fs-16);
-  font-weight: 700;
-  max-width: 280px;
+  padding: 18px 24px;
+  font-size: var(--fs-20);
+  font-weight: 500;
+  max-width: 760px;
   text-align: left;
   color: var(--color-black);
 }
@@ -404,15 +421,13 @@ p { margin: 0; }
 }
 
 /* ---------- 仕組み ---------- */
-.card__deco-char {
-  position: absolute;
-  width: 160px;
-  height: auto;
-  filter: drop-shadow(0 6px 10px rgba(0,0,0,0.15));
-  display: block;
+.section-3,
+#erabareru { background: var(--color-white); }
+
+.section-3{
+  padding-top: 90px;
+  padding-bottom: 0px;
 }
-.card__deco-char--left { top: -68px; left: -65px; }
-.card__deco-char--right { top: 167px; right: -30px; }
 
 .shikumi__intro {
   text-align: center;
@@ -585,7 +600,7 @@ p { margin: 0; }
   text-align: center;
   font-size: var(--fs-subtitle);
   font-weight: 700;
-  margin-bottom: 24px;
+  margin: 24px 0px;
 }
 .hikaku-hyo__table {
   width: 850px;
@@ -750,7 +765,6 @@ p { margin: 0; }
 }
 @media (min-width: 768px) {
   .deco-wrap::before { display: block; }
-  .deco-wrap--01::before { aspect-ratio: 1440 / 1530; background-image: url(../assets/deco-01.png); }
   .deco-wrap--02::before { aspect-ratio: 1440 / 1530; background-image: url(../assets/deco-02.png); }
   .deco-wrap--03::before { aspect-ratio: 1440 / 964; background-image: url(../assets/deco-03.png); }
   .br-no{display: none;}
@@ -768,7 +782,7 @@ p { margin: 0; }
     --fs-20: 16px;
     --fs-24: 18px;
     --fs-30: 19px;
-    --fs-subtitle: 19px;
+    --fs-subtitle: 18px;
     --fs-title: 22px;
     --fs-main: 26px;
   }
@@ -839,9 +853,12 @@ p { margin: 0; }
 
   .only-sp { display: inline; }
 
-  .section { padding: 70px 20px 24px; }
-  .section-2 {padding: 20px 20px 24px;}
-  .section-3 {padding: 40px 20px 24px;}
+  
+  .section { padding: 50px 20px 24px; }
+  .section-2 {padding: 0px 20px 24px;}
+  .section-3 {padding: 40px 20px 1px;}
+  .section-4 {padding-top: 0px;}
+  .hikaku {padding: 50px 20px 0px;}
   .card { padding: 55px 18px 40px; border-radius: 16px; }
 
   .header__inner { justify-content: center; padding: 8px 0; }
@@ -866,8 +883,8 @@ p { margin: 0; }
     gap: 24px; 
     margin-bottom: 22px;
   }
-  .chat-card { padding: 22px 16px; }
-  .chat-card--kihi { display: none; }
+  .chat-card { padding: 0 0 22px; }
+  .chat-list { padding: 0 16px; }
   .chat__avatar { width: 44px; height: 44px; }
   .chat__bubble { max-width: 210px; padding: 10px 14px; }
 
@@ -875,9 +892,13 @@ p { margin: 0; }
     padding: 12px 20px; 
     gap: 10px; 
   }
+  .pill--banner03 {
+    padding-bottom: 20px;
+  }
    .pill span { font-size: 14px; }
   .pill__avatar { width: 56px; height: 56px; }
 
+  .pill--banner02{margin-top: 40px;}
 
   .pill-pair {
     gap: 10px;
@@ -912,19 +933,5 @@ p { margin: 0; }
   .faq-item__q { padding: 16px 0; }
 
   .shikumi__lead{font-size: 17px;}
-
-  .card__deco-char{
-    width: 64px;
-  }
-
-  .card__deco-char--left {
-    top: 146px;
-    left: -18px;
-  }
-
-  .card__deco-char--right {
-    top: 222px;
-    right: -17px;
-  }
 
 }
