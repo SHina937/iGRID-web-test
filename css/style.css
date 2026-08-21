@@ -301,6 +301,7 @@ p { margin: 0; }
   line-height: 1.5;
 }
 
+.pill--green {text-align: left;}
 
 .pill--orange { background: var(--color-orange); border: none; }
 .pill--reverse { flex-direction: row; }
@@ -351,6 +352,7 @@ p { margin: 0; }
 
 /* ---------- 比較（チャット）セクション ---------- */
 .hikaku { 
+  padding-top: 20px; 
   padding-bottom: 0px; 
   
 }
