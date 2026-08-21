@@ -956,6 +956,14 @@ p { margin: 0; }
   .merit-box { width: 100%; }
   .shikumi__detail { flex-direction: column; padding: 20px; }
 
+  .shikumi__diagram {
+    width: calc(100% + 36px);
+    max-width: none;
+    margin-left: -18px;
+    margin-right: -18px;
+    border-radius: 0;
+  }
+
   .point-grid { grid-template-columns: 1fr; }
   .point-card__head--tall { min-height: 0; }
 
