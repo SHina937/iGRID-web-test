@@ -8,4 +8,20 @@ document.addEventListener("DOMContentLoaded", () => {
       button.setAttribute("aria-expanded", String(isOpen));
     });
   });
+
+  const fv = document.querySelector(".fv");
+  const scrollTopBtn = document.getElementById("scrollTopBtn");
+  if (fv && scrollTopBtn) {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        scrollTopBtn.classList.toggle("is-visible", !entry.isIntersecting);
+      },
+      { threshold: 0 }
+    );
+    observer.observe(fv);
+
+    scrollTopBtn.addEventListener("click", () => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+  }
 });
